@@ -1,9 +1,11 @@
-FROM python:2.7-onbuild
+FROM python:2.7-alpine
+
+COPY requirements.txt /tmp/
 
 RUN set -ex \
- && apt-get update \
- && apt-get install -y groff \
- && apt-get autoremove -y
+ && pip install --no-cache-dir -r /tmp/requirements.txt \
+ && rm /tmp/requirements.txt \
+ && apk --update add groff less
 
 VOLUME ["/root/.aws"]
 
