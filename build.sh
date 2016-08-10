@@ -55,6 +55,5 @@ git add requirements.txt
 git -c user.name='travis' -c user.email='travis' \
   commit -m "awscli ${AWSCLI_VERSION}"
 git tag ${AWSCLI_VERSION}
-git tag -f latest
 
 git push -q https://${GH_USER}:${GH_TOKEN}@github.com/luzifer-docker/awscli latest --tags
