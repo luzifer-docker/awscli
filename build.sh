@@ -52,7 +52,7 @@ docker build .
 
 echo "Updating repository..."
 git add requirements.txt
-git -c user.name='travis' -c user.email='travis' \
+git -c user.name='Travis Automated Update' -c user.email='travis@luzifer.io' \
   commit -m "awscli ${AWSCLI_VERSION}"
 git tag ${AWSCLI_VERSION}
 
