@@ -4,9 +4,9 @@ HOST_OS=$(uname -s)
 
 ### ---- ###
 
-echo "Switch back to latest"
-git checkout latest
-git reset --hard origin/latest
+echo "Switch back to master"
+git checkout master
+git reset --hard origin/master
 
 ### ---- ###
 
@@ -56,4 +56,4 @@ git -c user.name='Travis Automated Update' -c user.email='travis@luzifer.io' \
   commit -m "awscli ${AWSCLI_VERSION}"
 git tag ${AWSCLI_VERSION}
 
-git push -q https://${GH_USER}:${GH_TOKEN}@github.com/luzifer-docker/awscli latest --tags
+git push -q https://${GH_USER}:${GH_TOKEN}@github.com/luzifer-docker/awscli master --tags
